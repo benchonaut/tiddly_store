@@ -2,8 +2,9 @@
 
 !! BE CAREFUL ABOUT store.php , it is not in .gitignore  , so pulling might reset your users
 
-you would need a file named ".env" with 2 things defined:
-GITURL=
+you would need a file named ".env" with 2 things defined like below:
+
+GITURL=git@github.com:anyuser/anyrepo.git
 COMPOSE_PROJECT_NAME=yourproject
 
 whereas GITURL might be in token form ( https://user:tokenOrpass@gitserver.tld/project/path.git )
