@@ -1,4 +1,6 @@
-!!! Tiddlywiki web storage with automatic git upload
+# Tiddlywiki web storage with automatic git upload
+
+!! BE CAREFUL ABOUT store.php , it is not in .gitignore  , so pulling might reset your users
 
 you would need a file named ".env" with 2 things defined:
 GITURL=
