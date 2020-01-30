@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  tiddlywiki.mydomain.com:
+    build: 
+      context: ./build
+      dockerfile: Dockerfile-tiddlywiki-php7-nginx-alpine
+    container_name: tiddlywiki.mydomain.com
+    hostname: tiddlywiki.mydomain.com
+    restart: unless-stopped
+    networks:
+      - default
+    volumes: 
+      - ./store.php:/var/www/html/store.php:consistent
+    environment:
+      - GITURL
+      - VIRTUAL_HOST=tiddlywiki.mydomain.com
+      - VIRTUAL_PROTO=https
+      - VIRTUAL_PORT=443
+      - LETSENCRYPT_HOST=tiddlywiki.mydomain.com
+      - LETSENCRYPT_EMAIL=myemail@somwhat.com
+
+networks:
+    default:
+       external:
+         name: nginx-proxy
+
