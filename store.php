@@ -4,19 +4,14 @@
 Edit these lines according to your need
 ***/
 //{{{
-$AUTHENTICATE_USER = true;	// true | false - disables user authentication
-$override_filename = true;  // overrides the given filename with [username].html, does not work without 'AUTHENTICATE_USER'
-                            // usernames shall not contain slashes to avoid path traversal
-$override_savedir = true;   // i discourage anyone from using user-provided directory names
-$savedir = './';            // default save directory (uploadDir)
-$override_backupdir = true; // override the given backupdir 
-$backupdir = './backup';    // default backup directory
+$AUTHENTICATE_USER = true;	// true | false
+                            
                             
 $USERS = array(
 	'user1'=>'pass1', 
 	'user2'=>'pass2', 
   'user3'=>'pass3'); // set usernames and strong passwords
-
+  
 $DEBUG = false;				// true | false
 $CLEAN_BACKUP = true; 		// during backuping a file, remove overmuch backups
 $FOLD_JS = true; 			// if javascript files have been expanded during download the fold them
@@ -55,9 +50,9 @@ No change needed under
  * V1.5.2 - 2007/02/13
  * Enhancement: Add optional debug option in client parameters
  * V1.5.1 - 2007/02/01
- * Enhancement: Check value of file_uploads in php.ini. Thanks to Didier Corbière
+ * Enhancement: Check value of file_uploads in php.ini. Thanks to Didier Corbi?re
  * V1.5.0 - 2007/01/15
- * Correct: a bug in moving uploadFile in uploadDir thanks to DaniGutiérrez for reporting
+ * Correct: a bug in moving uploadFile in uploadDir thanks to DaniGuti?rrez for reporting
  * Refactoring
  * V 1.4.3 - 2006/10/17 
  * Test if $filename.lock exists for GroupAuthoring compatibility
@@ -253,7 +248,7 @@ $destfile = $filename;
 
 // get options
 foreach($optionArr as $o) {
-	list($key, $value) = split('=', $o);
+	list($key, $value) = explode('=', $o);
 	$options[$key] = $value;
 }
 
