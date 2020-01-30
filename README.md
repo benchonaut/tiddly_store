@@ -25,18 +25,7 @@ since "split" is deprecated, changes were necesaary on the original script)
 
 # Installation
 
-
-    apt-get install php5-common php5-cli php5-fpm  nginx
-    cp nginx/default.conf /etc/nginx/sites-available/wiki.conf
-    # edit the nginx file to represent your environment
-    ln -s /etc/nginx/sites-available/wiki.conf /etc/nginx/sites-enabled/wiki.conf
-    mkdir -p /var/www/wiki/backup
-    chown www-data:www-data -R /var/www/wiki/
-
-    # edit store.php to represent your environment
-    cp store.php /var/www/wiki
-    chown root:root /var/www/wiki/store.php
-    chmod 755 /var/www/wiki/store.php
+setup docker , in thise case it is meant to be used with the famous jwilder nginx setup 
 
 # Configure Tiddlywiki
 
